@@ -1,6 +1,10 @@
 import {FC, FormEvent} from "react";
+import {useRecordHelpers} from "../baq/store";
+import {TaskRecord} from "../baq/taskRecord";
 
 export const Header: FC = () => {
+  const {entity, updateRecords} = useRecordHelpers();
+
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -15,7 +19,12 @@ export const Header: FC = () => {
       return;
     }
 
-    console.log("Got task:", newTaskTitle);
+    // Create the new task record.
+    const taskRecord = TaskRecord.new(entity, {
+      title: newTaskTitle,
+      completed: false,
+    });
+    updateRecords([taskRecord]);
   };
 
   return (
