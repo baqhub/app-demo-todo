@@ -2,5 +2,11 @@
   "name": "BAQ Todos",
   "type": "ts-react",
   "path": "src/baq",
-  "record_types": {}
+  "record_types": {
+    "task": {
+      "entity": "types.baq.dev",
+      "record_id": "fe727f22b5c34fb185a370449e4f0128",
+      "version_hash": "2c2363602c496a6ac5d692c6332d246a8d4492d74ff4fe539ea15a36bec0e899"
+    }
+  }
 }
